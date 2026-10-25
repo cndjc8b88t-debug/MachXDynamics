@@ -1,0 +1,134 @@
+/* MachXDynamics: restrained test-stand typography.
+   No CSS framework, no web fonts from third-party servers, no JS.
+   System font stacks only; no externally loaded fonts. */
+
+:root {
+    --paper:  #f4f4f1;
+    --ink:    #15181c;
+    --muted:  #5c6168;
+    --accent: #b5481c;   /* oxidised copper, used sparingly */
+    --rule:   #c9c8c2;
+    --banner: #fff1c2;
+
+    --measure: 38rem;
+    --sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper:  #0d1014;
+        --ink:    #e7e6e1;
+        --muted:  #9a9ea5;
+        --accent: #e07a4a;
+        --rule:   #2f343b;
+        --banner: #3a3016;
+    }
+}
+
+* { box-sizing: border-box; }
+
+html { font-size: 17px; }
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--serif);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--rule);
+}
+a:hover { text-decoration-color: var(--accent); }
+
+.draft-banner {
+    background: var(--banner);
+    font: 600 0.75rem/1.4 var(--mono);
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 0.4rem 1rem;
+}
+
+.site-header, .site-footer {
+    max-width: 52rem;
+    margin: 0 auto;
+    padding: 1.25rem 1rem;
+    font-family: var(--sans);
+}
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    border-bottom: 1px solid var(--rule);
+}
+.brand {
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+}
+.site-nav a, .footer-nav a {
+    margin-left: 1rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+    text-decoration: none;
+}
+.site-nav a:hover, .footer-nav a:hover { color: var(--ink); }
+
+main {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--sans);
+    line-height: 1.25;
+    letter-spacing: -0.005em;
+}
+h1 { font-size: 1.9rem; margin: 0 0 1rem; }
+h2 { font-size: 1.15rem; margin: 2.4rem 0 0.6rem; }
+h3 { font-size: 1rem; margin: 1.8rem 0 0.4rem; }
+
+.lead { font-size: 1.2rem; }
+.meta, .muted { color: var(--muted); font-size: 0.9rem; }
+
+code, .badge {
+    font-family: var(--mono);
+    font-size: 0.85em;
+}
+.badge {
+    display: inline-block;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 0.15rem 0.5rem;
+    color: var(--muted);
+}
+
+hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
+
+.site-footer {
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.5rem;
+}
+.footer-nav a:first-child { margin-left: 0; }
+.footer-note { max-width: var(--measure); margin-top: 1rem; }
+
+@media (max-width: 480px) {
+    .site-nav a, .footer-nav a { margin-left: 0.7rem; }
+    h1 { font-size: 1.6rem; }
+}

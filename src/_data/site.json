@@ -1,0 +1,13 @@
+{
+  "title": "MachXDynamics",
+  "tagline": "A live flow simulation for rocket nozzles on iPhone. Two-dimensional, qualitative.",
+  "baseUrl": "https://machxdynamics.com",
+  "draft": false,
+  "aboutScreenLive": false,
+  "appStoreUrl": "",
+  "phone": "+49 172 8659265",
+  "wIdNr": "DE417852742-00001",
+  "contactEmail": "support@machxdynamics.com",
+  "legalEmail": "legal@machxdynamics.com",
+  "language": "en-US"
+}

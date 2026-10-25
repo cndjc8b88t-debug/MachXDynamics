@@ -1,0 +1,36 @@
+---
+layout: base.njk
+description: "MachXDynamics: a live flow simulation for rocket nozzles on iPhone. Two-dimensional, qualitative."
+---
+
+<h1>See shock waves form on your iPhone.</h1>
+
+<p class="lead">MachXDynamics is an interactive flow lab for rocket nozzles. Move a slider and the simulation on your iPhone responds: the throat chokes, the flow overexpands, shock cells line up behind the exit.</p>
+
+<p><span class="badge">2D · inviscid · no chemistry · qualitative</span></p>
+
+<h2>Sea level against vacuum</h2>
+
+<p>One bell can't be right at every altitude. Sweep the pressure ratio from 1 to 10,000 and switch between a small sea-level bell and a large vacuum bell. Watch the flow go from subsonic to choked, overexpanded, matched and underexpanded.</p>
+
+<h2>Reading the picture</h2>
+
+<p>Mach number, pressure and schlieren views. The Physics button shows the live exit Mach number, pressure ratio and flow regime, plus one sentence on what is happening and why. The info page explains what this simulation gets right and what it doesn't, and lists sources to read on.</p>
+
+<h2>Runs on your device</h2>
+
+<p>Everything is computed on your iPhone. No account, no cloud, no tracking.</p>
+
+<p>Tested on iPhone 17 Pro and smoothest on iPhone 15 Pro or newer. On older iPhones the flow takes a few minutes to settle. Requires iOS 26 or later.</p>
+
+<h2>What it is, and what it isn't</h2>
+
+<p>MachXDynamics solves the compressible flow equations on a coarse two-dimensional grid and without friction, so it can run live on a phone. The nozzle is a planar slot nozzle, not a round bell. That makes it good for seeing mechanisms and bad for design numbers. The badge in every view says which simplifications apply.</p>
+
+{% if site.appStoreUrl %}
+<p><a href="{{ site.appStoreUrl }}">Download on the App Store</a></p>
+{% endif %}
+
+<hr>
+
+<p class="muted">From the makers of FlatSixDynamics.</p>

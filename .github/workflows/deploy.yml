@@ -1,0 +1,82 @@
+name: Deploy Eleventy site to GitHub Pages
+
+# Repo: cndjc8b88t-debug/MachXDynamics · Pages source: GitHub Actions
+# Custom domain machxdynamics.com is set in Settings -> Pages (the CNAME file
+# in the repo root only documents it; Actions deploys ignore it).
+#
+# Draft guard: while src/_data/site.json has "draft": true, this workflow
+# builds but does NOT deploy. Legal pages contain placeholders until the
+# provider data and mailboxes exist; nothing incomplete goes live by accident.
+
+# Build on every push to the default branch, then publish to GitHub Pages.
+on:
+  push:
+    branches: [main]
+  # Allow a manual run from the Actions tab.
+  workflow_dispatch:
+
+# Least-privilege token: read the repo, write Pages, mint an OIDC id-token.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never run two deploys at once; let an in-progress deploy finish so a
+# half-published site is never left live.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          # Uses package-lock.json for cache + `npm ci`. A lockfile IS
+          # committed in this repo, so `npm ci` works out of the box.
+          # (If you ever remove the lockfile, swap `npm ci` for `npm install`.)
+          cache: npm
+
+      - name: Draft guard (no deploy while site.json has draft=true)
+        run: |
+          if node -e "process.exit(require('./src/_data/site.json').draft ? 0 : 1)"; then
+            echo "::error::site.json has draft=true. Complete the content, set draft=false, then push again."
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Pages
+        # Sets up the Pages deployment context.
+        uses: actions/configure-pages@v5
+
+      - name: Build with Eleventy
+        # Custom domain machxdynamics.com serves at ROOT -> PATH_PREFIX must
+        # be "/". Use "/<repo-name>/" only when serving from the github.io
+        # project URL without a custom domain.
+        env:
+          PATH_PREFIX: "/"
+        run: npm run build
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

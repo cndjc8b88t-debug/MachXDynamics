@@ -1,13 +1,28 @@
 ---
 layout: base.njk
-description: "MachXDynamics: a live flow simulation for rocket nozzles on iPhone. Two-dimensional, qualitative."
+description: "MachXDynamics: a live flow simulation for rocket nozzles on iPhone. Two-dimensional, qualitative. Free on the App Store."
 ---
 
 <h1>See shock waves form on your iPhone.</h1>
 
 <p class="lead">MachXDynamics is an interactive flow lab for rocket nozzles. Move a slider and the simulation on your iPhone responds: the throat chokes, the flow overexpands, shock cells line up behind the exit.</p>
 
-<p><span class="badge">2D · inviscid · no chemistry · qualitative</span></p>
+<div class="cta-row">
+    <a class="cta cta-primary" href="{{ site.appStoreUrl }}" aria-label="Download {{ site.appName }} on the App Store">Download on the App Store</a>
+</div>
+<p class="store-note">{{ site.appName }} · Free · iPhone, iOS 26 or later</p>
+
+<figure class="shot">
+    <img src="/assets/img/app-nozzle-mach-1434.jpg"
+         srcset="/assets/img/app-nozzle-mach-860.jpg 860w, /assets/img/app-nozzle-mach-1434.jpg 1434w"
+         sizes="(max-width: 48rem) 92vw, 44rem"
+         width="1434" height="660"
+         alt="The MachXDynamics app in landscape on iPhone. The sea-level bell at a pressure ratio of 79.4, in the Mach view: flow speeds up through the throat and leaves the exit as a widening jet with a shock crossing behind it. A status chip reads Steady flow, another reads 1D: underexpanded, and the label at the top reads 2D, inviscid, no chemistry, qualitative.">
+    <figcaption>
+        <span class="badge">2D · inviscid · no chemistry · qualitative</span>
+        <span class="shot-note">The sea-level bell at a pressure ratio of 79.4, in the Mach view. App screenshot.</span>
+    </figcaption>
+</figure>
 
 <h2>Sea level against vacuum</h2>
 
@@ -15,7 +30,7 @@ description: "MachXDynamics: a live flow simulation for rocket nozzles on iPhone
 
 <h2>Reading the picture</h2>
 
-<p>Mach number, pressure and schlieren views. The Physics button shows the live exit Mach number, pressure ratio and flow regime, plus one sentence on what is happening and why. The info page explains what this simulation gets right and what it doesn't, and lists sources to read on.</p>
+<p>Mach number, pressure and schlieren views. The ƒ(x) button opens the physics panel: the live exit Mach number, pressure ratio and flow regime, plus one sentence on what is happening and why. The info page explains what this simulation gets right and what it doesn't, and lists sources to read on.</p>
 
 <h2>Runs on your device</h2>
 
@@ -27,9 +42,9 @@ description: "MachXDynamics: a live flow simulation for rocket nozzles on iPhone
 
 <p>MachXDynamics solves the compressible flow equations on a coarse two-dimensional grid and without friction, so it can run live on a phone. The nozzle is a planar slot nozzle, not a round bell. That makes it good for seeing mechanisms and bad for design numbers. The badge in every view says which simplifications apply.</p>
 
-{% if site.appStoreUrl %}
-<p><a href="{{ site.appStoreUrl }}">Download on the App Store</a></p>
-{% endif %}
+<div class="cta-row">
+    <a class="cta cta-primary" href="{{ site.appStoreUrl }}" aria-label="Download {{ site.appName }} on the App Store">Download on the App Store</a>
+</div>
 
 <hr>
 

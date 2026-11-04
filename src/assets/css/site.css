@@ -74,6 +74,7 @@ a:hover { text-decoration-color: var(--accent); }
     letter-spacing: 0.02em;
     text-decoration: none;
 }
+.site-nav a { white-space: nowrap; }
 .site-nav a, .footer-nav a {
     margin-left: 1rem;
     font-size: 0.9rem;
@@ -112,6 +113,48 @@ code, .badge {
     color: var(--muted);
 }
 
+.cta-row { margin: 2rem 0 0; }
+.cta {
+    display: inline-block;
+    font-family: var(--sans);
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0.7rem 1.4rem;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    text-decoration: none;
+}
+.cta-primary { background: var(--ink); color: var(--paper); }
+.cta-primary:hover { background: var(--accent); border-color: var(--accent); }
+.store-note {
+    margin: 0.7rem 0 0;
+    font-family: var(--sans);
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+
+/* App screenshot: wider than the text column, centred on the page */
+.shot {
+    width: min(44rem, 92vw);
+    margin: 2.25rem 0 0 50%;
+    transform: translateX(-50%);
+}
+.shot img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+}
+.shot figcaption { margin-top: 0.7rem; text-align: center; }
+.shot-note {
+    display: block;
+    margin-top: 0.4rem;
+    font-family: var(--sans);
+    font-size: 0.78rem;
+    color: var(--muted);
+}
+
 hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 
 .site-footer {
@@ -131,4 +174,7 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 @media (max-width: 480px) {
     .site-nav a, .footer-nav a { margin-left: 0.7rem; }
     h1 { font-size: 1.6rem; }
+    /* The brand already links home; this keeps the header on one line. */
+    .site-nav a[href="/"] { display: none; }
+    .shot .badge { font-size: 0.64rem; padding: 0.15rem 0.4rem; white-space: nowrap; }
 }

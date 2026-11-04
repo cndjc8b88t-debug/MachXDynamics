@@ -18,8 +18,8 @@ Write if something crashes, freezes, looks wrong or reads wrong. We answer in En
 These details turn a long search into a short one:
 
 - iPhone model and iOS version
-{% if site.aboutScreenLive %}- App version (shown in the app's About screen)
-{% endif %}- Which nozzle (sea-level or vacuum bell) and view you were in (for example Mach, Pressure or Schlieren), and roughly where the pressure-ratio slider stood
+- App version (shown in the app's About screen)
+- Which nozzle (sea-level or vacuum bell) and view you were in (for example Mach, Pressure or Schlieren), and roughly where the pressure-ratio slider stood
 - A screenshot, if the problem is visual
 
 ## FAQ
@@ -37,6 +37,8 @@ Every view carries a short label, for example `2D · inviscid · no chemistry ·
 iOS 26 or later, iPhone only. The app runs in landscape.
 
 Tested on iPhone 17 Pro; smoothest on iPhone 15 Pro or newer; on older iPhones settling takes a few minutes.
+
+The app is listed as [{{ site.appName }} on the App Store]({{ site.appStoreUrl }}).
 
 ### Does the app collect any data?
 

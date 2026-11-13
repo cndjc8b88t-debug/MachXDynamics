@@ -20,6 +20,8 @@ const PATH_PREFIX = process.env.PATH_PREFIX || "/";
 export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
     eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
+    // Files served from the site root: favicon.ico, apple-touch-icon.png, llms.txt.
+    eleventyConfig.addPassthroughCopy({ "src/root": "/" });
 
     eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
 

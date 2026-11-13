@@ -1,0 +1,42 @@
+{#- Structured data for the home page.
+    instagramUrl in site.json: handle "machxdynamics" is not yet confirmed. Check it before merging.
+    downloadUrl and sameAs use the plain App Store URL (no campaign token), so the
+    identifier stays stable. Visible links use appStoreWebUrl. -#}
+{%- set ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": site.baseUrl + "/#organization",
+      "name": site.title,
+      "url": site.baseUrl + "/",
+      "logo": site.baseUrl + site.logo,
+      "email": site.contactEmail,
+      "sameAs": [site.instagramUrl, site.youtubeUrl, site.appStoreUrl]
+    },
+    {
+      "@type": "WebSite",
+      "@id": site.baseUrl + "/#website",
+      "name": site.title,
+      "url": site.baseUrl + "/",
+      "inLanguage": "en",
+      "publisher": { "@id": site.baseUrl + "/#organization" }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": site.baseUrl + "/#app",
+      "name": site.appName,
+      "operatingSystem": "iOS 26 or later",
+      "applicationCategory": "EducationalApplication",
+      "description": "A live, two-dimensional, qualitative flow simulation of a rocket nozzle for iPhone. Drag the pressure ratio and see shock waves form: the throat chokes, a shock forms inside the bell, and the jet leaves the exit with shock cells. Not a design tool.",
+      "url": site.baseUrl + "/",
+      "image": site.baseUrl + site.ogImage,
+      "downloadUrl": site.appStoreUrl,
+      "installUrl": site.appStoreUrl,
+      "sameAs": [site.appStoreUrl],
+      "offers": { "@type": "Offer", "price": 0, "priceCurrency": "USD" },
+      "publisher": { "@id": site.baseUrl + "/#organization" }
+    }
+  ]
+} -%}
+<script type="application/ld+json">{{ ld | dump | safe }}</script>

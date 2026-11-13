@@ -4,20 +4,33 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0d1014">
-    {% set pageTitle %}{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.appName }}{% endif %}{% endset %}
+    {% set pageTitle %}{% if title %}{{ title }} · {{ site.title }}{% else %}{{ site.seoTitle or site.appName }}{% endif %}{% endset %}
+    {% set pageDescription = description or site.tagline %}
+    {% set pageUrl = site.baseUrl + page.url %}
     <title>{{ pageTitle }}</title>
-    <meta name="description" content="{{ description or site.tagline }}">
-    <link rel="canonical" href="{{ site.baseUrl }}{{ page.url }}">
+    <meta name="description" content="{{ pageDescription }}">
+    {# canonical in front matter points a duplicate page at its original (e.g. /imprint/ -> /impressum/). #}
+    <link rel="canonical" href="{% if canonical %}{{ site.baseUrl }}{{ canonical }}{% else %}{{ pageUrl }}{% endif %}">
+    <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="apple-itunes-app" content="app-id={{ site.appStoreId }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{% if pageLang == 'de' %}de_DE{% else %}en_US{% endif %}">
     <meta property="og:title" content="{{ pageTitle }}">
-    <meta property="og:description" content="{{ description or site.tagline }}">
-    <meta property="og:url" content="{{ site.baseUrl }}{{ page.url }}">
-    <meta property="og:image" content="{{ site.baseUrl }}/assets/img/app-nozzle-mach-1434.jpg">
+    <meta property="og:description" content="{{ pageDescription }}">
+    <meta property="og:url" content="{{ pageUrl }}">
+    <meta property="og:image" content="{{ site.baseUrl }}{{ site.ogImage }}">
     <meta property="og:image:width" content="1434">
     <meta property="og:image:height" content="660">
-    <meta property="og:image:alt" content="The MachXDynamics app on iPhone, showing Mach number in a nozzle and the jet behind it, with the label 2D · inviscid · no chemistry · qualitative.">
+    <meta property="og:image:alt" content="{{ site.ogImageAlt }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ pageTitle }}">
+    <meta name="twitter:description" content="{{ pageDescription }}">
+    <meta name="twitter:image" content="{{ site.baseUrl }}{{ site.ogImage }}">
+    <meta name="twitter:image:alt" content="{{ site.ogImageAlt }}">
     {% if noindex or site.draft %}<meta name="robots" content="noindex">{% endif %}
+    {% if page.url == "/" %}{% include "jsonld.njk" %}{% endif %}
     <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>

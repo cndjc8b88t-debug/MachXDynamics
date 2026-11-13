@@ -1,0 +1,30 @@
+# MachXDynamics
+
+> MachXDynamics is an iPhone app, listed as "MachXDynamics: Nozzle Lab" on the App Store. It is a live, two-dimensional, qualitative flow simulation of a rocket nozzle: drag the pressure ratio and see shock waves form. The throat chokes, a shock forms inside the bell, the flow overexpands, matches, and finally leaves the exit underexpanded with shock cells in the jet. It shows mechanisms and trends, not design values. It is not a design tool.
+
+Key facts:
+
+- Platform: iPhone only, iOS 26 or later, landscape. Tested on iPhone 17 Pro; smoothest on iPhone 15 Pro or newer.
+- Price: free on the App Store. No in-app purchases, no advertising.
+- Model: compressible flow equations on a coarse two-dimensional grid, without friction, no chemistry. The nozzle is a planar slot nozzle, not a round bell. Every view carries the badge "2D · inviscid · no chemistry · qualitative".
+- Content: a sea-level bell and a vacuum bell; pressure ratio from 1 to 10,000; Mach number, pressure and schlieren views; a physics panel with the live exit Mach number, pressure ratio and flow regime.
+- Privacy: everything is computed on the device. No account, no analytics, no tracking. The website has no cookies and no tracking.
+- Not affiliated with any space agency or launch company.
+- From the makers of [FlatSixDynamics](https://flatsixdynamics.com/).
+
+## Pages
+
+- [Home](https://machxdynamics.com/): what the app shows
+- [Questions and answers](https://machxdynamics.com/faq/): short factual answers
+- [Support](https://machxdynamics.com/support/): contact and bug reports
+- [App Store](https://apps.apple.com/app/id6821608049): MachXDynamics: Nozzle Lab
+
+## Profiles
+
+- [YouTube](https://www.youtube.com/@machxdynamics)
+- [Instagram](https://www.instagram.com/machxdynamics/)
+
+## Legal
+
+- [Privacy policy](https://machxdynamics.com/privacy/)
+- [Impressum](https://machxdynamics.com/impressum/) (German, authoritative) · [Imprint](https://machxdynamics.com/imprint/) (English)

@@ -25,6 +25,8 @@ These details turn a long search into a short one:
 
 ## FAQ
 
+More short answers are on the [questions and answers](/faq/) page.
+
 ### Is this CFD?
 
 It solves the compressible flow equations on your device, on a coarse grid and without friction, so it can run live on a phone. That makes it good for seeing mechanisms and bad for design numbers. For those, use a full CFD package.

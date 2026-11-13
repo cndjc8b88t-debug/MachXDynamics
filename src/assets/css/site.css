@@ -170,6 +170,9 @@ hr { border: 0; border-top: 1px solid var(--rule); margin: 2.5rem 0; }
 }
 .footer-nav a:first-child { margin-left: 0; }
 .footer-note { max-width: var(--measure); margin-top: 1rem; }
+.footer-links { margin-top: 0.75rem; }
+.footer-maker a { color: var(--muted); }
+.footer-maker a:hover { color: var(--ink); }
 
 @media (max-width: 480px) {
     .site-nav a, .footer-nav a { margin-left: 0.7rem; }

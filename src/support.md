@@ -39,7 +39,7 @@ Every view carries a short label, for example `2D · inviscid · no chemistry ·
 
 iOS 26 or later, iPhone only. The app runs in landscape.
 
-Tested on iPhone 17 Pro; smoothest on iPhone 15 Pro or newer; on older iPhones settling takes a few minutes.
+Tested on iPhone 17 Pro; smoothest on iPhone 15 Pro or newer; on older iPhone models settling takes a few minutes.
 
 The app is listed as [{{ site.appName }} on the App Store]({{ site.appStoreWebUrl }}).
 

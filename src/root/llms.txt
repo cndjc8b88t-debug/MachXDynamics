@@ -1,6 +1,6 @@
 # MachXDynamics
 
-> MachXDynamics is an iPhone app, listed as "MachXDynamics: Nozzle Lab" on the App Store. It is a live, two-dimensional, qualitative flow simulation of a rocket nozzle: drag the pressure ratio and see shock waves form. The throat chokes, a shock forms inside the bell, the flow overexpands, matches, and finally leaves the exit underexpanded with shock cells in the jet. It shows mechanisms and trends, not design values. It is not a design tool.
+> MachXDynamics is an app for iPhone, listed as "MachXDynamics: Nozzle Lab" on the App Store. It is a live, two-dimensional, qualitative flow simulation of a rocket nozzle: drag the pressure ratio and see shock waves form. The throat chokes, a shock forms inside the bell, the flow overexpands, matches, and finally leaves the exit underexpanded with shock cells in the jet. It shows mechanisms and trends, not design values. It is not a design tool.
 
 Key facts:
 

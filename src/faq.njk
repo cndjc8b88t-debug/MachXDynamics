@@ -2,19 +2,19 @@
 layout: base.njk
 title: "Questions and answers"
 permalink: /faq/
-description: "Short answers about MachXDynamics: is it free, which iPhones it runs on, how close to reality the simulation is, and what it collects."
+description: "Short answers about MachXDynamics: is it free, which iPhone models it runs on, how close to reality the simulation is, and what it collects."
 ---
 
 <h1>Questions and answers</h1>
 
 <h2 id="what">What is MachXDynamics?</h2>
-<p>MachXDynamics is an iPhone app, listed as {{ site.appName }} on the App Store. It shows shock waves form in a rocket nozzle, computed live on your iPhone. Drag the pressure ratio and watch the flow respond: the throat chokes, a shock forms inside the bell, the flow overexpands, matches, and finally leaves the exit underexpanded with shock cells in the jet.</p>
+<p>MachXDynamics is an app for iPhone, listed as {{ site.appName }} on the App Store. It shows shock waves form in a rocket nozzle, computed live on your iPhone. Drag the pressure ratio and watch the flow respond: the throat chokes, a shock forms inside the bell, the flow overexpands, matches, and finally leaves the exit underexpanded with shock cells in the jet.</p>
 
 <h2 id="free">Is it free?</h2>
 <p>Yes. {{ site.appName }} is free on the App Store. It has no in-app purchases and no advertising.</p>
 
 <h2 id="iphone">Which iPhone do I need?</h2>
-<p>Any iPhone with iOS 26 or later. The app is iPhone only and runs in landscape. It is tested on iPhone 17 Pro and smoothest on iPhone 15 Pro or newer. On older iPhones the flow takes a few minutes to settle.</p>
+<p>Any iPhone with iOS 26 or later. The app is iPhone only and runs in landscape. It is tested on iPhone 17 Pro and smoothest on iPhone 15 Pro or newer. On older iPhone models the flow takes a few minutes to settle.</p>
 
 <h2 id="reality">How close to reality is the simulation?</h2>
 <p>It is qualitative. The picture shows how the flow behaves and which way the trends go. It is not a source of design values. MachXDynamics solves the compressible flow equations on a coarse two-dimensional grid and without friction, so it can run live on a phone. The nozzle is a planar slot nozzle, not a round bell. The badge in every view says which simplifications apply.</p>
@@ -32,7 +32,7 @@ description: "Short answers about MachXDynamics: is it free, which iPhones it ru
 <p>No. Everything is computed on your iPhone. The app has no account, no analytics and no tracking, and it makes no network connections of its own. Details are in the <a href="/privacy/">privacy policy</a>.</p>
 
 <h2 id="who">Who makes MachXDynamics?</h2>
-<p>One independent developer, from the makers of <a href="{{ site.flatsixUrl }}">FlatSixDynamics</a>. MachXDynamics is not affiliated with any space agency or launch company. The provider is named in the <a href="/impressum/">Impressum</a>. Questions go to <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a>.</p>
+<p>MachXDynamics is made by one independent developer, who also makes <a href="{{ site.flatsixUrl }}">FlatSixDynamics</a>. MachXDynamics is not affiliated with any space agency or launch company. The provider is named in the <a href="/impressum/">Impressum</a>. Questions go to <a href="mailto:{{ site.contactEmail }}">{{ site.contactEmail }}</a>.</p>
 
 <div class="cta-row">
     <a class="cta cta-primary" href="{{ site.appStoreWebUrl }}" aria-label="Download {{ site.appName }} on the App Store">Download on the App Store</a>

@@ -1,6 +1,7 @@
 ---
 title: "Privacy Policy"
 permalink: /privacy/
+description: "The MachXDynamics app collects no data: no account, no analytics, no tracking. How this website on GitHub Pages handles server logs and email."
 layout: base.njk
 bodyClass: legal
 ---

@@ -1,6 +1,7 @@
 ---
 title: "Support"
 permalink: /support/
+description: "Support for MachXDynamics: one inbox, read by the developer. What to include in a bug report, and short answers on the model badge and devices."
 layout: base.njk
 bodyClass: legal
 ---

@@ -20,3 +20,16 @@ Desktop.ini
 *.swp
 *.swo
 *~
+
+# Geheimnisse / Signierung (R-G1, 22.11.2026)
+*.p8
+*.p12
+*.pem
+*.cer
+*.key
+*.mobileprovision
+.env*
+AuthKey_*
+npm-debug.log*
+yarn-error.log*
+.npmrc
